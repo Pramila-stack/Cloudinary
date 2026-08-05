@@ -1,0 +1,416 @@
+export const CATEGORIES = [
+  { slug: "dresses", name: "Dresses" },
+  { slug: "tops", name: "Tops" },
+  { slug: "skirts", name: "Skirts" },
+  { slug: "accessories", name: "Accessories" },
+];
+
+const COLORS = {
+  blush: { name: "Blush", hex: "#F5D9DF" },
+  sage: { name: "Sage", hex: "#DDE8CE" },
+  rose: { name: "Rose", hex: "#EBA9BC" },
+  cream: { name: "Cream", hex: "#F5EEE1" },
+  lilac: { name: "Lilac", hex: "#E4D6EF" },
+  butter: { name: "Butter", hex: "#F7EBC2" },
+  skyblue: { name: "Sky Blue", hex: "#D6E9F5" },
+  mocha: { name: "Mocha", hex: "#D9C4B4" },
+};
+
+// Images are assigned by category at the bottom of this file: four photos per
+// category live in public/images/products (dress1..4, top1..4, skirt1..4,
+// accessory1..4) and are rotated across each category's products. The slug arg
+// is kept only so the product literals below can stay untouched.
+const img = () => [];
+
+export const PRODUCTS = [
+  // ---- Dresses (8) ----
+  {
+    id: 1,
+    slug: "aria-ribbon-midi",
+    name: "Aria Ribbon Midi",
+    price: 68,
+    category: "dresses",
+    colors: [COLORS.blush, COLORS.sage],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("aria-ribbon-midi"),
+    isFeatured: true,
+    isBestSeller: true,
+    isNew: false,
+    description:
+      "A dreamy midi tied at the waist with a soft satin ribbon. Cloud-light and made to twirl.",
+  },
+  {
+    id: 2,
+    slug: "petal-puff-sleeve-dress",
+    name: "Petal Puff Sleeve Dress",
+    price: 74,
+    category: "dresses",
+    colors: [COLORS.rose, COLORS.cream],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("petal-puff-sleeve-dress"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Billowing puff sleeves and a nipped waist, like a bouquet stitched into a bodice.",
+  },
+  {
+    id: 3,
+    slug: "lace-trim-slip-dress",
+    name: "Lace Trim Slip Dress",
+    price: 58,
+    category: "dresses",
+    colors: [COLORS.cream, COLORS.mocha],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("lace-trim-slip-dress"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "Delicate lace hem whispering against bare skin, cut on the bias for an easy candlelit drape.",
+  },
+  {
+    id: 4,
+    slug: "cherub-tiered-sundress",
+    name: "Cherub Tiered Sundress",
+    price: 62,
+    category: "dresses",
+    colors: [COLORS.skyblue, COLORS.butter],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("cherub-tiered-sundress"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "Soft cotton tiers that flutter with every step, sweet as a picnic in a meadow.",
+  },
+  {
+    id: 5,
+    slug: "starlet-corset-dress",
+    name: "Starlet Corset Dress",
+    price: 89,
+    category: "dresses",
+    colors: [COLORS.rose, COLORS.blush],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("starlet-corset-dress"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "A boned bodice laced like a love letter, blooming into a full swishing skirt below.",
+  },
+  {
+    id: 6,
+    slug: "gingham-picnic-dress",
+    name: "Gingham Picnic Dress",
+    price: 54,
+    category: "dresses",
+    colors: [COLORS.cream, COLORS.sage],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("gingham-picnic-dress"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "Playful gingham checks with a bow-tied bodice, made for sunlit afternoons on a blanket.",
+  },
+  {
+    id: 7,
+    slug: "moonlit-tulle-gown",
+    name: "Moonlit Tulle Gown",
+    price: 118,
+    category: "dresses",
+    colors: [COLORS.lilac, COLORS.cream],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("moonlit-tulle-gown"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Layers of whisper-soft tulle catch the light like moonbeams caught in lace.",
+  },
+  {
+    id: 8,
+    slug: "sweetheart-wrap-dress",
+    name: "Sweetheart Wrap Dress",
+    price: 66,
+    category: "dresses",
+    colors: [COLORS.mocha, COLORS.blush],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("sweetheart-wrap-dress"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "A gently gathered sweetheart neckline and a tie waist, soft enough for slow Sunday mornings.",
+  },
+
+  // ---- Tops (6) ----
+  {
+    id: 9,
+    slug: "bow-front-milkmaid-top",
+    name: "Bow Front Milkmaid Top",
+    price: 42,
+    category: "tops",
+    colors: [COLORS.cream, COLORS.blush],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("bow-front-milkmaid-top"),
+    isFeatured: true,
+    isBestSeller: true,
+    isNew: false,
+    description:
+      "An off-shoulder milkmaid top finished with a hand-tied bow, cottagecore softness incarnate.",
+  },
+  {
+    id: 10,
+    slug: "lace-cami-blouse",
+    name: "Lace Cami Blouse",
+    price: 38,
+    category: "tops",
+    colors: [COLORS.rose, COLORS.lilac],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("lace-cami-blouse"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "Featherlight straps and a lace-edged neckline that layers as sweetly as it stands alone.",
+  },
+  {
+    id: 11,
+    slug: "ruffle-cuff-blouse",
+    name: "Ruffle Cuff Blouse",
+    price: 48,
+    category: "tops",
+    colors: [COLORS.skyblue, COLORS.cream],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("ruffle-cuff-blouse"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "Voluminous ruffled cuffs frame the wrists like folded petals on a breezy button-down.",
+  },
+  {
+    id: 12,
+    slug: "heart-button-cardigan",
+    name: "Heart Button Cardigan",
+    price: 56,
+    category: "tops",
+    colors: [COLORS.butter, COLORS.sage],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("heart-button-cardigan"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "A cropped knit cardigan clasped with tiny heart buttons, soft as a hug on a cool evening.",
+  },
+  {
+    id: 13,
+    slug: "satin-bow-camisole",
+    name: "Satin Bow Camisole",
+    price: 34,
+    category: "tops",
+    colors: [COLORS.blush, COLORS.mocha],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("satin-bow-camisole"),
+    isFeatured: false,
+    isBestSeller: true,
+    isNew: false,
+    description:
+      "Liquid satin skimming the collarbone, finished with a delicate bow at the strap.",
+  },
+  {
+    id: 14,
+    slug: "peter-pan-collar-top",
+    name: "Peter Pan Collar Top",
+    price: 44,
+    category: "tops",
+    colors: [COLORS.cream, COLORS.rose],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("peter-pan-collar-top"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "A rounded lace collar and pearl buttons bring a storybook sweetness to everyday layering.",
+  },
+
+  // ---- Skirts (5) ----
+  {
+    id: 15,
+    slug: "tiered-broderie-skirt",
+    name: "Tiered Broderie Skirt",
+    price: 52,
+    category: "skirts",
+    colors: [COLORS.cream, COLORS.blush],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("tiered-broderie-skirt"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Broderie anglaise tiers cascade like lace curtains catching a summer breeze.",
+  },
+  {
+    id: 16,
+    slug: "ballet-wrap-skirt",
+    name: "Ballet Wrap Skirt",
+    price: 46,
+    category: "skirts",
+    colors: [COLORS.lilac, COLORS.blush],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("ballet-wrap-skirt"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "A gauzy wrap skirt with ribbon ties at the hip, borrowed straight from the rehearsal room.",
+  },
+  {
+    id: 17,
+    slug: "gingham-mini-skirt",
+    name: "Gingham Mini Skirt",
+    price: 40,
+    category: "skirts",
+    colors: [COLORS.rose, COLORS.cream],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("gingham-mini-skirt"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "A flirty gingham mini with a kick-pleat hem, sweet enough for a rooftop tea date.",
+  },
+  {
+    id: 18,
+    slug: "satin-slip-midi-skirt",
+    name: "Satin Slip Midi Skirt",
+    price: 58,
+    category: "skirts",
+    colors: [COLORS.mocha, COLORS.blush],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("satin-slip-midi-skirt"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Bias-cut satin that pools softly at the ankle, glinting like candlelight on silk.",
+  },
+  {
+    id: 19,
+    slug: "ruffled-tulle-skirt",
+    name: "Ruffled Tulle Skirt",
+    price: 64,
+    category: "skirts",
+    colors: [COLORS.sage, COLORS.cream],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("ruffled-tulle-skirt"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Layer upon layer of tulle ruffles, soft as spun sugar and just as sweet to twirl in.",
+  },
+
+  // ---- Accessories (5) ----
+  {
+    id: 20,
+    slug: "silk-hair-bow-clip",
+    name: "Silk Hair Bow Clip",
+    price: 28,
+    category: "accessories",
+    colors: [COLORS.blush, COLORS.rose],
+    sizes: ["One size"],
+    images: img("silk-hair-bow-clip"),
+    isFeatured: true,
+    isBestSeller: true,
+    isNew: false,
+    description:
+      "A generous silk bow clip that turns any ponytail into a little celebration.",
+  },
+  {
+    id: 21,
+    slug: "pearl-drop-earrings",
+    name: "Pearl Drop Earrings",
+    price: 32,
+    category: "accessories",
+    colors: [COLORS.cream],
+    sizes: ["One size"],
+    images: img("pearl-drop-earrings"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Tiny pearls dangling like dewdrops, catching the light with every gentle turn of the head.",
+  },
+  {
+    id: 22,
+    slug: "lace-trim-mini-bag",
+    name: "Lace Trim Mini Bag",
+    price: 54,
+    category: "accessories",
+    colors: [COLORS.blush, COLORS.mocha],
+    sizes: ["One size"],
+    images: img("lace-trim-mini-bag"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "A structured mini bag edged in lace, just roomy enough for lip gloss and secrets.",
+  },
+  {
+    id: 23,
+    slug: "ribbon-wrap-choker",
+    name: "Ribbon Wrap Choker",
+    price: 30,
+    category: "accessories",
+    colors: [COLORS.rose, COLORS.blush],
+    sizes: ["One size"],
+    images: img("ribbon-wrap-choker"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "A slim velvet ribbon that wraps the throat softly, finished with a tiny bow clasp.",
+  },
+  {
+    id: 24,
+    slug: "gingham-bow-headband",
+    name: "Gingham Bow Headband",
+    price: 29,
+    category: "accessories",
+    colors: [COLORS.cream, COLORS.sage],
+    sizes: ["One size"],
+    images: img("gingham-bow-headband"),
+    isFeatured: false,
+    isBestSeller: true,
+    isNew: true,
+    description:
+      "A padded gingham headband topped with a soft bow, sweet enough for school runs or garden parties.",
+  },
+];
+
+// Assign real product photos by category, rotating through all the photos
+// available for that category in public/images/products/ (dressN, topN, skirtN,
+// accessoryN). Each product gets two images (primary + a different one for the
+// gallery). If you add more photos, bump the matching `count` below.
+const CATEGORY_PHOTOS = {
+  dresses: { prefix: "dress", count: 9 },
+  tops: { prefix: "top", count: 8 },
+  skirts: { prefix: "skirt", count: 8 },
+  accessories: { prefix: "accessory", count: 9 },
+};
+
+const seenPerCategory = {};
+for (const product of PRODUCTS) {
+  const { prefix, count } = CATEGORY_PHOTOS[product.category] || CATEGORY_PHOTOS.dresses;
+  const n = (seenPerCategory[product.category] = (seenPerCategory[product.category] || 0) + 1);
+  const primary = ((n - 1) % count) + 1;
+  const secondary = (n % count) + 1;
+  product.images = [
+    `/images/products/${prefix}${primary}.png`,
+    `/images/products/${prefix}${secondary}.png`,
+  ];
+}
