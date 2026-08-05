@@ -390,12 +390,165 @@ export const PRODUCTS = [
     description:
       "A padded gingham headband topped with a soft bow, sweet enough for school runs or garden parties.",
   },
+
+  // ---- Added so every category photo has its own product ----
+  {
+    id: 25,
+    slug: "primrose-babydoll-dress",
+    name: "Primrose Babydoll Dress",
+    price: 72,
+    category: "dresses",
+    colors: [COLORS.blush, COLORS.butter],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("primrose-babydoll-dress"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "A sweet babydoll silhouette with a smocked bodice, floaty enough to catch the softest breeze.",
+  },
+  {
+    id: 26,
+    slug: "eyelet-off-shoulder-top",
+    name: "Eyelet Off-Shoulder Top",
+    price: 46,
+    category: "tops",
+    colors: [COLORS.cream, COLORS.sage],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("eyelet-off-shoulder-top"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: false,
+    description:
+      "Delicate eyelet cotton that bares the shoulders, trimmed with a whisper of ruffle.",
+  },
+  {
+    id: 27,
+    slug: "ribbon-tie-crop-blouse",
+    name: "Ribbon Tie Crop Blouse",
+    price: 44,
+    category: "tops",
+    colors: [COLORS.rose, COLORS.blush],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("ribbon-tie-crop-blouse"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "A cropped blouse that laces shut with slender ribbons, tied in a soft bow at the bust.",
+  },
+  {
+    id: 28,
+    slug: "rosette-mini-skirt",
+    name: "Rosette Mini Skirt",
+    price: 48,
+    category: "skirts",
+    colors: [COLORS.blush, COLORS.cream],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("rosette-mini-skirt"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Scattered fabric rosettes bloom across a flippy mini, sweet as a spring garden.",
+  },
+  {
+    id: 29,
+    slug: "pleated-tennis-skirt",
+    name: "Pleated Tennis Skirt",
+    price: 42,
+    category: "skirts",
+    colors: [COLORS.cream, COLORS.sage],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    images: img("pleated-tennis-skirt"),
+    isFeatured: false,
+    isBestSeller: true,
+    isNew: false,
+    description:
+      "A crisp pleated skirt with coquette charm, made for iced matcha and afternoon strolls.",
+  },
+  {
+    id: 30,
+    slug: "lace-hem-midi-skirt",
+    name: "Lace Hem Midi Skirt",
+    price: 60,
+    category: "skirts",
+    colors: [COLORS.mocha, COLORS.blush],
+    sizes: ["XS", "S", "M", "L"],
+    images: img("lace-hem-midi-skirt"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "A softly draping midi finished with a deep band of delicate lace at the hem.",
+  },
+  {
+    id: 31,
+    slug: "satin-hair-ribbon-set",
+    name: "Satin Hair Ribbon Set",
+    price: 24,
+    category: "accessories",
+    colors: [COLORS.blush, COLORS.rose],
+    sizes: ["One size"],
+    images: img("satin-hair-ribbon-set"),
+    isFeatured: false,
+    isBestSeller: true,
+    isNew: false,
+    description:
+      "A trio of satin ribbons for tying half-up bows, trailing prettily down your hair.",
+  },
+  {
+    id: 32,
+    slug: "pearl-cluster-hair-clips",
+    name: "Pearl Cluster Hair Clips",
+    price: 26,
+    category: "accessories",
+    colors: [COLORS.cream],
+    sizes: ["One size"],
+    images: img("pearl-cluster-hair-clips"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Dainty clips crowded with tiny pearls, like dewdrops pinned into your hair.",
+  },
+  {
+    id: 33,
+    slug: "heart-locket-necklace",
+    name: "Heart Locket Necklace",
+    price: 38,
+    category: "accessories",
+    colors: [COLORS.cream, COLORS.rose],
+    sizes: ["One size"],
+    images: img("heart-locket-necklace"),
+    isFeatured: true,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "A delicate heart locket on a fine chain, waiting for a photo of someone you adore.",
+  },
+  {
+    id: 34,
+    slug: "bow-embellished-socks",
+    name: "Bow Embellished Socks",
+    price: 18,
+    category: "accessories",
+    colors: [COLORS.blush, COLORS.cream],
+    sizes: ["One size"],
+    images: img("bow-embellished-socks"),
+    isFeatured: false,
+    isBestSeller: false,
+    isNew: true,
+    description:
+      "Sheer ruffle-cuff socks finished with a tiny satin bow at the ankle.",
+  },
 ];
 
-// Assign real product photos by category, rotating through all the photos
-// available for that category in public/images/products/ (dressN, topN, skirtN,
-// accessoryN). Each product gets two images (primary + a different one for the
-// gallery). If you add more photos, bump the matching `count` below.
+// Assign real product photos by category from public/images/products/ (dressN,
+// topN, skirtN, accessoryN). There is one product per photo, so each product's
+// primary image is its own unique category photo (photo N for the Nth product in
+// that category), and its second gallery image is the next photo in the set. If
+// you add more photos, add a matching product and bump the `count` below.
 const CATEGORY_PHOTOS = {
   dresses: { prefix: "dress", count: 9 },
   tops: { prefix: "top", count: 8 },
@@ -406,9 +559,9 @@ const CATEGORY_PHOTOS = {
 const seenPerCategory = {};
 for (const product of PRODUCTS) {
   const { prefix, count } = CATEGORY_PHOTOS[product.category] || CATEGORY_PHOTOS.dresses;
-  const n = (seenPerCategory[product.category] = (seenPerCategory[product.category] || 0) + 1);
-  const primary = ((n - 1) % count) + 1;
-  const secondary = (n % count) + 1;
+  const k = (seenPerCategory[product.category] = (seenPerCategory[product.category] || 0) + 1) - 1; // 0-based
+  const primary = (k % count) + 1;
+  const secondary = ((k + 1) % count) + 1;
   product.images = [
     `/images/products/${prefix}${primary}.png`,
     `/images/products/${prefix}${secondary}.png`,

@@ -4,7 +4,7 @@ import { getProducts, getProduct, getCategories, getRelated } from "./products.j
 describe("products api", () => {
   it("returns all products with no filters", async () => {
     const { results } = await getProducts();
-    expect(results.length).toBe(24);
+    expect(results.length).toBe(34);
   });
   it("filters by category", async () => {
     const { results } = await getProducts({ category: "dresses" });
